@@ -20,6 +20,14 @@ Best of all. Everything's local.
 - You can make it run in the background with `ollama serve`
 - Instructions on how to download and deploy Ollama can be found here https://ollama.com
 
+## Usage
+
+Once the application is running, you will see a brain icon in your menu bar:
+
+- Click on the icon to open the text input field.
+- Enter your prompt and either press Return or click the "Send" button to submit.
+- The application interacts with the specified API and displays the response below the input field.
+
 
 ## Installation
 
