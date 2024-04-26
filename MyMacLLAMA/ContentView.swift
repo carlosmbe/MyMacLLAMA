@@ -9,38 +9,43 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var appModel: DataInterface
+    // I will use the EnvironmentObject property wrapper to share data between this view and others
+     @EnvironmentObject var appModel: DataInterface
     
     var body: some View {
         VStack {
             
+            // TextField for the user input .
             TextField("Prompt", text: $appModel.prompt)
                 .textFieldStyle(.roundedBorder)
-                .onSubmit(appModel.sendPrompt)
+                .onSubmit(appModel.sendPrompt) // Send the prompt to Ollama and get a response
             
-            
+            // Divider draws a line separating elements
             Divider()
             
+            // Use an if statement to conditionally display a view depending on if appModel.isSending.
             if appModel.isSending{
-                ProgressView()
+                ProgressView() // Display a progress bar while waiting for a response.
                     .padding()
             }else{
-                Text(appModel.response)
+                Text(appModel.response) // Display the response text from appModel if not currently sending.
             }
             
+           
             HStack{
                 
+                // Button to send the current prompt. It triggers the sendPrompt function when clicked.
                 Button("Send"){
                     appModel.sendPrompt()
                 }
-                .keyboardShortcut(.return)
+                .keyboardShortcut(.return) // Assign the return key as a shortcut to activate this button. Cause Mac.
                 
+                // Button to clear the current prompt and response.
                 Button("Clear"){
-                    appModel.prompt = ""
-                    appModel.response = ""
+                    appModel.prompt = "" // Clear the prompt string.
+                    appModel.response = "" // Clear the response string.
                 }
-                .keyboardShortcut("c")
-                
+                .keyboardShortcut("c") // Assign the 'c' key as a shortcut to activate this button. So Command + C
                 
             }
         }
