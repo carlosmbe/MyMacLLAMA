@@ -11,6 +11,7 @@
 		B636DDBB2BDB1F2700ED624C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636DDBA2BDB1F2700ED624C /* ContentView.swift */; };
 		B636DDBD2BDB1F2800ED624C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B636DDBC2BDB1F2800ED624C /* Assets.xcassets */; };
 		B636DDC02BDB1F2800ED624C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B636DDBF2BDB1F2800ED624C /* Preview Assets.xcassets */; };
+		B636DDC82BDB23B700ED624C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B636DDC72BDB23B700ED624C /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		B636DDBC2BDB1F2800ED624C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B636DDBF2BDB1F2800ED624C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B636DDC12BDB1F2800ED624C /* MyMacLLAMA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyMacLLAMA.entitlements; sourceTree = "<group>"; };
+		B636DDC72BDB23B700ED624C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				B636DDB82BDB1F2700ED624C /* MyMacLLAMAApp.swift */,
+				B636DDC72BDB23B700ED624C /* Models.swift */,
 				B636DDBA2BDB1F2700ED624C /* ContentView.swift */,
 				B636DDBC2BDB1F2800ED624C /* Assets.xcassets */,
 				B636DDC12BDB1F2800ED624C /* MyMacLLAMA.entitlements */,
@@ -85,6 +88,8 @@
 			dependencies = (
 			);
 			name = MyMacLLAMA;
+			packageProductDependencies = (
+			);
 			productName = MyMacLLAMA;
 			productReference = B636DDB52BDB1F2700ED624C /* MyMacLLAMA.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +118,8 @@
 				Base,
 			);
 			mainGroup = B636DDAC2BDB1F2700ED624C;
+			packageReferences = (
+			);
 			productRefGroup = B636DDB62BDB1F2700ED624C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B636DDC82BDB23B700ED624C /* Models.swift in Sources */,
 				B636DDBB2BDB1F2700ED624C /* ContentView.swift in Sources */,
 				B636DDB92BDB1F2700ED624C /* MyMacLLAMAApp.swift in Sources */,
 			);
@@ -279,6 +287,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = NO;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +316,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = NO;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
