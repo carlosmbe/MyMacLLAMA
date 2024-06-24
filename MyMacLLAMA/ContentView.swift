@@ -28,7 +28,9 @@ struct ContentView: View {
                 ProgressView() // Display a progress bar while waiting for a response.
                     .padding()
             }else{
-                Text(appModel.response) // Display the response text from appModel if not currently sending.
+                ScrollView { // Allows the response to scroll
+                    Text(appModel.response) // Display the response text from appModel if not currently sending.
+                }
             }
             
            
