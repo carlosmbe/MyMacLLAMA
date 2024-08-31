@@ -16,10 +16,12 @@ struct ContentView: View {
         VStack {
             
             // TextField for the user input .
-            TextField("Prompt", text: $appModel.prompt)
+            TextField("Type Prompt Here", text: $appModel.prompt)
                 .textFieldStyle(.roundedBorder)
-                .onSubmit(appModel.sendPrompt) // Send the prompt to Ollama and get a response
-            
+                .onSubmit{
+                    appModel.sendPrompt() // Send the prompt to Ollama and get a response
+                    appModel.prompt = "" //Clears the Text Field after submiting
+                }
             // Divider draws a line separating elements
             Divider()
             
