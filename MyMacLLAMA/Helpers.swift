@@ -11,7 +11,33 @@
 
 import Foundation
 
-//Streaming Reponse Helpers
+///Get Models Helpers
+    // Root object returned by the API
+    struct LocalModelsResponse: Decodable {
+        let models: [LocalModel]
+    }
+
+    // Represents each model item 
+    struct LocalModel: Decodable, Identifiable, Hashable {
+        var id: String { name }
+        
+        let name: String
+        let modified_at: String
+        let size: Int
+        let digest: String
+        let details: ModelDetails
+    }
+
+    struct ModelDetails: Decodable, Hashable {
+        let format: String
+        let family: String
+        let families: [String]?
+        let parameter_size: String
+        let quantization_level: String
+    }
+
+
+///Streaming Reponse Helpers
 extension DataInterface {
     struct Chunk: Decodable {
         let model: String?

@@ -25,9 +25,32 @@ class DataInterface: ObservableObject, Observable {
     @Published var streamResponses = false
 
     @Published var model : String = ""
+    @Published var localModels: [LocalModel] = []
     @Published var selectedModel : String = "llama3"
     
-    // Function to handle sending the prompt to a server
+    
+    ///Function to get a list of models installed
+    func getModels() async {
+        
+        let urlString = "http://127.0.0.1:11434/api/tags"
+                guard let url = URL(string: urlString) else { return }
+                
+                do {
+                
+                    let (data, _) = try await URLSession.shared.data(from: url)
+                
+                    let decoded = try JSONDecoder().decode(LocalModelsResponse.self, from: data)
+                    
+                    DispatchQueue.main.async {
+                        self.localModels = decoded.models
+                    }
+                } catch {
+                    print("Failed to fetch or decode /api/tags: \(error)")
+                }
+        
+    }
+    
+    /// Functions to handle sending the prompt to a server
     func sendPrompt() async {
         // print("Started Send Prompt")  // Log the start of sending a prompt
         
@@ -64,7 +87,8 @@ class DataInterface: ObservableObject, Observable {
     func sendWithStream(_ request : URLRequest) async {
         ///Special Shout Out to @Zach Waugh's article on streaming LLM Responses to SwiftUI Text
         ///https://zachwaugh.com/posts/streaming-messages-chatgpt-swift-asyncsequence
-        ///
+        
+        //TODO: Make this function able to handle Timed Out API Calls 
         let (stream, _) = try! await URLSession.shared.bytes(for: request)
         do{
             for try await line in stream.lines {

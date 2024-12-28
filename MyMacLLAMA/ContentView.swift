@@ -13,6 +13,7 @@ struct ContentView: View {
     
     var settingsView: some View{
         HStack{
+            Text("Current Model: \(appModel.selectedModel)")
             Spacer()
             Menu{
                 Text("Settings")
@@ -20,7 +21,16 @@ struct ContentView: View {
                     .multilineTextAlignment(.center)
                 
                 Divider()
-                Text("Current Model \(appModel.selectedModel)")
+                Picker("Select Model", selection: $appModel.selectedModel) {
+                                ForEach(appModel.localModels, id: \.id) { model in
+                                    Text(model.name)
+                                        .tag(model.name)
+                                }
+                            }
+                            .pickerStyle(.menu)
+                          
+                
+                Divider()
                 Toggle("Stream Responses", isOn: $appModel.streamResponses)
                 
                 Divider()
@@ -69,6 +79,8 @@ struct ContentView: View {
             settingsView
             
             textBoxView
+                .onAppear { Task {  await appModel.getModels()  }   }
+                //Put this here so that the loaded models can be initalised as soon as the app is ready 
             
             Divider()
             
