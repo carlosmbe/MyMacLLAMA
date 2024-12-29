@@ -16,7 +16,7 @@ Best of all. Everything's local.
 - **Simple UI:** A minimalistic user interface that focuses on functionality and ease of use.
 
 ## New Features
-- **Model Selection:** If you have multiple models downloaded with Ollama, you can select which one to prompt amoung them.
+- **Model Selection:** If you have multiple models downloaded with Ollama, you can select which one to prompt among them.
 - **Stram Responses Toggle:** You can choose whether or not you'd like responses to be streamed as the response is generated or only receive the final output.
 
 ## Requirements
