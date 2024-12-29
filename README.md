@@ -3,7 +3,7 @@
 ## Overview
 
 My Mac LLAMA App is a menu bar application for macOS that integrates directly into your system's top bar. 
-It's an app I made for myself to easily chat with Ollama, LLAMA 3, without opening the terminal everytime.
+It's an app I made for myself to easily chat with Ollama Models, without opening the terminal everytime.
 It's designed for quick access and instant feedback, making it a convenient tool for real-time text processing.
 
 Best of all. Everything's local.
@@ -14,6 +14,10 @@ Best of all. Everything's local.
 - **Menu Bar Integration:** Runs quietly in the menu bar, allowing for constant availability without obstructing desktop space.
 - **Real-Time Text Interaction:** Send text prompts and receive responses from a configured API, all within a few clicks.
 - **Simple UI:** A minimalistic user interface that focuses on functionality and ease of use.
+
+## New Features
+- **Model Selection:** If you have multiple models downloaded with Ollama, you can select which one to prompt amoung them.
+- **Stram Responses Toggle:** You can choose whether or not you'd like responses to be streamed as the response is generated or only receive the final output.
 
 ## Requirements
 - Have Ollama installed and running in the background
